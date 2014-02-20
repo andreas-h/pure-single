@@ -38,19 +38,28 @@
                 <div class="cover-body">
                     <header class="header">
                         <hgroup>
+                            {% for title, link in HOMELINKS %}
+                                <p class="links"><a href="{{ link }}">{{ title }}</a></p>
+                            {% endfor %}
                             {% if PROFILE_IMG_URL %}
                             <img class="avatar" src="{{ PROFILE_IMG_URL }}">
                             {% endif %}
-                            <h1 class="brand-main"><a href="/">{{ SITENAME }}</a></h1>
+                            <h1 class="brand-main"><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
                             <p class="tagline">{{ TAGLINE }}</p>
                             {% for title, link in MENUITEMS %}
                                 <p class="links"><a href="{{ SITEURL }}/{{ link }}">{{ title }}</a></p>
                             {% endfor %}
                                 <p class="social">
                             {% for title, link in SOCIAL %}
+                                {% if title == "ORCID"%}
+                                    <a href="{{ link }}">
+                                        <img style="position: relative; top: 2.5px; width: 40px; height: 40px; max-width: 40px; max-height: 40px;" src="{{ SITEURL }}/theme/img/orcid.png"></img>
+                                    </a>
+                                {% else %}
                                     <a href="{{ link }}">
                                         <i class="fa fa-{{ title }} fa-3x"></i>
                                     </a>
+                                {% endif %}
                             {% endfor %}
                                 <p>
                         </hgroup>
