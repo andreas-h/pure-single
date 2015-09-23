@@ -16,7 +16,7 @@
     <div class="pure-u">
         <div class="content">
             <h1 class="content-subhead">Publications</h1>
-            {% for yr in range(2014, 2009, -1) %}
+            {% for yr in range(2015, 2009, -1) %}
               <h2 class="entry-title">{{ yr }}</h2>
               <ul>
                 {% for pub in publications %}
@@ -38,7 +38,7 @@
               </ul>
             {% endfor %}
             <h1 class="content-subhead">Selected Posters</h1>
-            {% for yr in range(2014, 2009, -1) %}
+            {% for yr in range(2015, 2009, -1) %}
               <ul>
                 {% for pub in posters %}
                 {% set key, year, text, bibtex, doi, url, pdf, slides, poster = pub %}
